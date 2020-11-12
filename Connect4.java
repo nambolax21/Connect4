@@ -11,13 +11,21 @@ public class Connect4 {
 		//creates new board
 		Board b1 = new Board();
 		User u1 = new User();
-		u1.assignColor();
+		//assigns the player yellow or red
+		String[] player = u1.assignColor();
 		//calls makeBoard method
-		String[][] display = b1.makeBoard();
+		b1.makeBoard();
 		//displays the array 
 		b1.printBoard();
-		b1.guess(u1.placeChips());
+		//looping until win = true
+		boolean win = false;
+		while(!win) {
+		//calls method that allows the players to String[][] display = ick a column  and passes the column to placeChips() to place their chip at the respective place  
+		b1.placeChips(u1.placeColumn(), player);
+		//prints board with their guess
 		b1.printBoard();
+		win = b1.winner();
+		}
 
 
 
