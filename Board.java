@@ -13,7 +13,7 @@ public class Board {
 	//sets placeholders as zero
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 7; j++) {
-				display[i][j] ="0";
+				display[i][j] = "0";
 			}//end nested for loop
 		}//end for loop
 		return display;
@@ -61,15 +61,57 @@ System.out.println("\n 1 2 3 4 5 6 7 ");
 	}//end placeChips()
 
 	//determines if there is a winner
-/*	public boolean winner() {
-		boolean win = false;
-		int chipsInRow = 0;
-		while(!win) {
-			for(
-				if (display[i][j].equals(display{
+	public boolean winner() {
+				//System.out.print("in winner");
+				//check horizontally, sideways
+			for(int i = 5; i >= 0; i--){
+				for(int j = 0; j <= 3; j++) {
+					if ((display[i][j].equals("R") || display[i][j].equals("Y")) && display[i][j].equals(display[i][j+1]) && display[i][j+1].equals(display[i][j+2]) && display[i][j+2].equals(display[i][j+3])) {
+						
+						System.out.println("You won!");
+					
+						return true;
+					}
 				}
-		}
-}*/
+			}
+			//checks veritcally up and down
+			for(int i = 5; i >= 3; i--){
+				for(int j = 0; j <= 6; j++) {
+					if ((display[i][j].equals("R") || display[i][j].equals("Y")) && display[i][j].equals(display[i-1][j]) && display[i - 1][j].equals(display[i - 2][j]) && display[i - 2][j].equals(display[i - 3][j])) {
+						
+						System.out.println("You won!");
+					
+						 return true;
+					}
+				}
+			}
+			//checks like staircase up
+			for(int i = 5; i >= 3; i--){
+				for(int j = 0; j <= 3; j++) {
+					if ((display[i][j].equals("R") || display[i][j].equals("Y")) && display[i][j].equals(display[i-1][j + 1]) && display[i - 1][j + 1].equals(display[i - 2][j + 2]) && display[i - 2][j + 2].equals(display[i - 3][j + 3])) {
+						
+						System.out.println("You won!");
+					
+						 return true;
+					}
+				}
+			}
+			checks staircase down
+			for(int i = 5; i >= 3; i--){
+				for(int j = 6; j >= 3; j--) {
+					if ((display[i][j].equals("R") || display[i][j].equals("Y")) && display[i][j].equals(display[i - 1][j - 1]) && display[i - 1][j - 1].equals(display[i - 2][j - 2]) && display[i - 2][j - 2].equals(display[i - 3][j - 3])) {
+						
+						System.out.println("You won!");
+					
+						 return true;
+					}
+				}
+			}
+
+
+
+		return false;
+}
 	
 
 

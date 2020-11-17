@@ -25,6 +25,7 @@ public class Connect4 {
 		//prints board with their guess
 		b1.printBoard();
 		win = b1.winner();
+		System.out.print(win);
 		}
 
 

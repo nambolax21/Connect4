@@ -42,7 +42,7 @@ public class User{
 	//prompts user for where they want to place their chip and returns the value of the column 1-7
 	public int[] placeColumn(){
 	count++;
-	if(count%2 == 0) {
+	if(count%2 == 1) {
 	System.out.print("Player 1, what column (between 1-7) would you like to place your chip? "); 
 	}
 	else {
